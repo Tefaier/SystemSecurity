@@ -64,4 +64,12 @@ later n is calculated using shared p so decryption can be replicated after getti
 3. give arguments to RSA.py
 
 ## AES: [A]verage [E]njoyer of [S]ymmetric ciphers
-5. ?
+
+1. aes_crack.py
+
+makes so that only one unknown byte of flag is in block and checks how all varients are encrypted
+
+## xor: the pillar of cryptography
+
+1. collect_cookies.py
+2. ?
