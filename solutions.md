@@ -34,6 +34,25 @@
 3. https://cats.is-course.ru/feedback
 4. give link to cats.html
 
+## https://stored-xss.iscourse.ru
+
+1. testtest
+2. Qwerty123456789!
+3. https://cats.is-course.ru/feedback
+4. give link to cats.html
+5. catch all the cookies
+6. ?
+
+## https://extender.is-course.ru
+
+1. testtest
+2. Qwerty123456789!
+3. take cookie
+4. echo "" | base64 -d
+5. take last part and extend it given key 32, message smth:smth:testtest, to add :admin
+6. reconstruct cookie with admin hexed and new cookie
+7. curl "https://extender.is-course.ru/" -H "Cookie: session=<>"
+
 ## RSA: a lot in common
 
 1. nc is-course.ru 7004
@@ -45,3 +64,4 @@ later n is calculated using shared p so decryption can be replicated after getti
 3. give arguments to RSA.py
 
 ## AES: [A]verage [E]njoyer of [S]ymmetric ciphers
+5. ?
