@@ -33,3 +33,15 @@
 2. Qwerty123456789!
 3. https://cats.is-course.ru/feedback
 4. give link to cats.html
+
+## RSA: a lot in common
+
+1. nc is-course.ru 7004
+2. 
+encrypt = (message ^ 65537) mod n
+decrypt = (message ^ d) mod n
+n = p * q
+later n is calculated using shared p so decryption can be replicated after getting initial q
+3. give arguments to RSA.py
+
+## AES: [A]verage [E]njoyer of [S]ymmetric ciphers
